@@ -1,8 +1,12 @@
+import LayoutProvider from './layout'
+
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-inter"> Hello world!</h1>
-    </>
+    <div>
+      <LayoutProvider>
+        <div className="text-3xl"> text</div>
+      </LayoutProvider>
+    </div>
   )
 }
 
