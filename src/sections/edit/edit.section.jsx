@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Chips from '../../components/chips.components'
+import ParagraphEditor from './ParagraphEditor/ParagraphEditor'
 
 const Edit = () => {
   const [chips, setChips] = useState([
@@ -20,10 +21,20 @@ const Edit = () => {
   }
 
   return (
-    <div className="flex space-x-2">
-      {chips.map((chip, index) => (
-        <Chips key={index} name={chip.name} backgroundColor={chip.backgroundColor} onClick={() => handleClick(index)} />
-      ))}
+    <div className="flex flex-col w-full">
+      <div className="flex space-x-2">
+        {chips.map((chip, index) => (
+          <Chips
+            key={index}
+            name={chip.name}
+            backgroundColor={chip.backgroundColor}
+            onClick={() => handleClick(index)}
+          />
+        ))}
+      </div>
+      <div className="flex space-x-2">
+        <ParagraphEditor />
+      </div>
     </div>
   )
 }

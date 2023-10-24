@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className="flex justify-between w-full h-[8%] text-white">
+    <div className="flex justify-between bg-dark p-2 text-white">
       <div className="flex items-center"></div>
       <div className="flex items-center">
         <div className="flex space-x-4 px-3">
