@@ -4,16 +4,14 @@ import NavigationBar from './sections/navigation/navigation.section'
 
 function App() {
   return (
-    <div>
-      <LayoutProvider>
-        <div className="flex flex-col m-3">
-          <NavigationBar />
-          <div className="flex mt-4">
-            <Edit />
-          </div>
+    <LayoutProvider>
+      <main className="flex flex-col bg-dark p-4">
+        <NavigationBar />
+        <div className="flex mt-4">
+          <Edit />
         </div>
-      </LayoutProvider>
-    </div>
+      </main>
+    </LayoutProvider>
   )
 }
 
