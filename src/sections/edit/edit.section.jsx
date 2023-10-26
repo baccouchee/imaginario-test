@@ -1,8 +1,12 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import Chips from '../../components/chips.components'
 import ParagraphEditor from './ParagraphEditor/ParagraphEditor'
+import CustomWaveform from '../../components/AuditVisualizer.component'
+import VideoEditor from './VideoEditor/videoEditor.section'
+import VideoPlayer from '../../components/videoPlayer.components'
 
-const Edit = () => {
+const Edit = ({ videoRef }) => {
   const [chips, setChips] = useState([
     { name: 'Edit', backgroundColor: false },
     { name: 'Style', backgroundColor: false },
@@ -32,8 +36,9 @@ const Edit = () => {
           />
         ))}
       </div>
-      <div className="flex space-x-2">
+      <div className="flex w-full space-x-2">
         <ParagraphEditor />
+        <VideoPlayer videoRef={videoRef} />
       </div>
     </div>
   )

@@ -4,7 +4,7 @@ import pipette from '../assets/editor/pipette.svg'
 
 const ColorSetting = () => {
   return (
-    <div className="flex flex-row space-x-2 p-1 bg-dark-light rounded-lg w-fit font-inter text-sm text-white">
+    <div className="flex flex-row  p-1 bg-dark-light rounded-lg w-full justify-between font-inter text-sm text-white">
       <div className="bg-white w-6 h-6 rounded rounded-m"></div>
 
       <div className="bg-dark-bg w-6 h-6 rounded rounded-m hover:bg-slate-600 cursor-pointer">

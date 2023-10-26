@@ -16,28 +16,47 @@ const Sidebar = () => {
     { icon: 'Brand', name: 'Brand' },
   ]
 
-  return (
-    <div className="flex flex-col h-screen w-1/6 bg-dark-bg text-white font-inter">
-      <div className="p-4">
-        <img src="../src/assets/logo.png" alt="Logo" style={{ maxWidth: '140px' }} className="mx-auto" />
-      </div>
+  const sidebarBottomElements = [
+    { icon: 'Settings', name: 'Settings' },
+    { icon: 'Questions', name: 'Questions' },
+  ]
 
-      <div className="flex flex-col cursor-pointer ">
-        {sidebarElements.map((element, index) => (
-          <div className="p-1 flex justify-center" key={index}>
-            <div
-              className={`flex items-center p-2 w-10/12 space-x-3 px-3 ${
-                isElementActive(element.name)
-                  ? 'rounded-lg bg-dark-light transition-all duration-200' // Add transition classes
-                  : ''
-              }`}
-              onClick={() => handleElementClick(element.name)}
-            >
-              <img src={`../src/assets/sidebarIcon/${element.icon}.svg`} alt="My Icon" className="w-6 h-6" />
-              <span>{element.name}</span>
+  return (
+    <div className="fixed z-50 flex flex-col  h-screen bg-dark-bg text-white  ">
+      <div className="p-4">
+        <img src="../src/assets/logo.png" alt="Logo" className="mx-auto max-w-[70%]" />
+      </div>
+      <div className="w-full h-full flex flex-col justify-between ">
+        <div className="flex flex-col">
+          {sidebarElements.map((element, index) => (
+            <div className="p-1 flex justify-center" key={index}>
+              <div
+                className={`flex  cursor-pointer hover:bg-slate-700 rounded-lg items-center p-2 w-10/12 space-x-3 px-3 ${
+                  isElementActive(element.name) ? 'rounded-lg bg-dark-light transition-all duration-200' : ''
+                }`}
+                onClick={() => handleElementClick(element.name)}
+              >
+                <img src={`../src/assets/sidebarIcon/${element.icon}.svg`} alt="My Icon" className="w-4 h-4" />
+                <div className="text-xs font-inter">{element.name}</div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div className=" mb-10">
+          {sidebarBottomElements.map((element, index) => (
+            <div className="p-1 flex justify-center" key={index}>
+              <div
+                className={`flex items-center cursor-pointer hover:bg-slate-700 rounded-lg  p-2 w-10/12 space-x-3 px-3 ${
+                  isElementActive(element.name) ? 'rounded-lg bg-dark-light transition-all duration-200' : ''
+                }`}
+                onClick={() => handleElementClick(element.name)}
+              >
+                <img src={`../src/assets/sidebarIcon/${element.icon}.svg`} alt="My Icon" className="w-4 h-4" />
+                <div className="text-xs font-inter">{element.name}</div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
